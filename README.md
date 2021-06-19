@@ -4,7 +4,7 @@ This is an example of how to connect to AWS IoT Core using C# and .NET Core.
 
 ## 1. Manualy creating a Thing on AWS IoT
 1. Once you are loged in the [AWS Console](https://us-east-2.console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin&region=us-east-2) click on the **IoT Core** services 
-Now on the left pane click on Manage -> Things and then, in the right pane click on the Create button in order to create a new thing.
+Now on the left pane, click on Manage -> Things and then, in the right pane click on the Create button in order to create a new thing.
 ![](/Images/IoTThings.png)
 ![](/Images/IoTCreateThing.png)
 
@@ -55,13 +55,15 @@ In order to establish a MQTT Connection with AWS IoT platform we need to convert
 and then use the following command
 
 ```
-openssl pkcs12 -export -in **iotdevicecertificateinpemformat** -inkey **iotdevivceprivatekey** -out **devicecertificateinpfxformat** -certfile **rootcertificatefile**
+openssl pkcs12 -export -in **iotdevicecertificateinpemformat** 
+-inkey **iotdevivceprivatekey** -out **devicecertificateinpfxformat** -certfile **rootcertificatefile**
 ```
 
 if you named the files as suggested before then it will look like below
 
 ```
-openssl pkcs12 -export -in certificate.cert.pem -inkey certificate.private.key -out certificate.cert.pfx -certfile AmazonRootCA1.crt
+openssl pkcs12 -export -in certificate.cert.pem -inkey certificate.private.key -out certificate.cert.pfx
+ -certfile AmazonRootCA1.crt
 ```
 
 Then when it ask you for a password just press _Enter_ twice and then you will have the .pfx certificate in your folder.
